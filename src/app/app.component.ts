@@ -5,7 +5,8 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule }from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import {SpotifyService } from './services/spotify.service';
 
 
 @Component({
@@ -21,7 +22,9 @@ import { HttpClientModule }from '@angular/common/http';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
+
   ],
+  
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
