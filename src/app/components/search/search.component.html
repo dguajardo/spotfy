@@ -9,17 +9,4 @@
     />
   </div>
 </div>
-<div class="card-columns m-5">
-  @for( artist of newArtists; track artist) {
-  <div class="card m-2">
-    <img
-      class="card-img-top"
-      [src]="artist.images | noimage"
-      alt="Card image cap "
-    />
-    <div class="card-body">
-      <h5 class="card-title">{{ artist.name }}</h5>
-    </div>
-  </div>
-  }
-</div>
+<app-card [items]="newArtists"></app-card>

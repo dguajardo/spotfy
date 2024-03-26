@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { SpotifyService } from './services/spotify.service';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { CardComponent } from './components/card/card.component';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,7 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     ArtistComponent,
     NavbarComponent,
     NoimagePipe,
+    CardComponent,
   ],
   providers: [SpotifyService],
   styleUrl: './app.component.scss',

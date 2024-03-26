@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { NoimagePipe } from '../../pipes/noimage.pipe';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-search',
   standalone: true,
-  imports: [NoimagePipe],
+  imports: [NoimagePipe, CardComponent],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
 })
