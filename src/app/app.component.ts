@@ -6,8 +6,7 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import {SpotifyService } from './services/spotify.service';
-
+import { SpotifyService } from './services/spotify.service';
 
 @Component({
   selector: 'app-root',
@@ -22,9 +21,8 @@ import {SpotifyService } from './services/spotify.service';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-
   ],
-  
+  providers: [SpotifyService],
   styleUrl: './app.component.scss',
 })
 export class AppComponent {

@@ -1,1 +1,32 @@
-<p>search works!</p>
+<div class="class row">
+  <div class="col">
+    <input
+      #word
+      type="text"
+      (keyup)="search(word.value)"
+      class="form-control"
+      placeholder="Search for an artist"
+    />
+  </div>
+</div>
+<div class="card-columns m-5">
+  @for( artist of newArtists; track artist) {
+  <div class="card m-2">
+    <!-- @if(!artist.images[0].url){
+    <img
+      class="card-img-top"
+      src="assets/img/box-not-found.png"
+      alt="Card image cap "
+    />
+    } -->
+    <img
+      class="card-img-top"
+      [src]="artist.images[0].url"
+      alt="Card image cap "
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ artist.name }}</h5>
+    </div>
+  </div>
+  }
+</div>
