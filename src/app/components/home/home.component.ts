@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 import { SpotifyService } from '../../services/spotify.service';
+import { NoimagePipe } from '../../pipes/noimage.pipe';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [JsonPipe],
+  imports: [JsonPipe, NoimagePipe],
   providers: [SpotifyService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

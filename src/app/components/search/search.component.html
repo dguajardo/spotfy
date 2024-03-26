@@ -12,16 +12,9 @@
 <div class="card-columns m-5">
   @for( artist of newArtists; track artist) {
   <div class="card m-2">
-    <!-- @if(!artist.images[0].url){
     <img
       class="card-img-top"
-      src="assets/img/box-not-found.png"
-      alt="Card image cap "
-    />
-    } -->
-    <img
-      class="card-img-top"
-      [src]="artist.images[0].url"
+      [src]="artist.images | noimage"
       alt="Card image cap "
     />
     <div class="card-body">
