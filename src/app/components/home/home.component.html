@@ -1,4 +1,18 @@
-@for( country of countries; track country){
-<ul>
-    <li>{{ country.name.official | json}} - {{ country.population}}</li>
-</ul>}
+<div class="card-columns">
+  @for( song of newSongs; track song) {
+  <div class="card m-2">
+    <img
+      class="card-img-top"
+      [src]="song.images[0].url"
+      alt="Card image cap "
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ song.name }}</h5>
+      <p class="card-text">
+        @for(artist of song.artists; track artist){
+        <span>{{ artist.name }}</span> }
+      </p>
+    </div>
+  </div>
+  }
+</div>
