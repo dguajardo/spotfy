@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NoimagePipe } from '../../pipes/noimage.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -10,4 +11,15 @@ import { NoimagePipe } from '../../pipes/noimage.pipe';
 })
 export class CardComponent {
   @Input() items: any[] = [];
+  artistId!: any;
+  constructor(private router: Router) {}
+
+  handleArtist(items: any) {
+    if (items?.type === 'artist') {
+      this.artistId = items?.id;
+    } else {
+      this.artistId = items?.artist[0]?.id;
+    }
+    this.router.navigateByUrl(`artist/${this.artistId}`);
+  }
 }
