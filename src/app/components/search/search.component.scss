@@ -1,4 +1,16 @@
 .card-columns {
+    margin: 5px;
     display: inline-block;
-    columns: 60px 3;
+    justify-content: center;
+    .card {
+        margin-top: 5px;
+        .card-img-top {
+            display: inline-block;
+            columns: 60px 3;
+        }
+        .card-body {
+            display: inline-block;
+            columns: 60px 3;
+        }
+    }
 }

@@ -9,4 +9,8 @@
     />
   </div>
 </div>
+@if(loading){
+<app-loader></app-loader>
+} @if(!loading){
 <app-card [items]="newArtists"></app-card>
+}
