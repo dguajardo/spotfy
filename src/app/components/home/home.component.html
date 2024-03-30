@@ -1,4 +1,10 @@
-@if(loading){
+@if(!loading){
 <app-loader></app-loader>
+} @if(error){
+<div class="alert alert-danger animated fadeIn">
+    <h3>Error</h3>
+    <p>{{ messageError }}r</p>
+</div>
 }
+
 <app-card [items]="newSongs"></app-card>

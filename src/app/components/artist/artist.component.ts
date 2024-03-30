@@ -4,13 +4,14 @@ import { SpotifyService } from '../../services/spotify.service';
 import { NoimagePipe } from '../../pipes/noimage.pipe';
 import { LoaderComponent } from '../shared/loader/loader.component';
 import { CardComponent } from "../card/card.component";
+import { DomseguroPipe } from '../../pipes/domseguro.pipe';
 @Component({
     selector: 'app-artist',
     standalone: true,
     templateUrl: './artist.component.html',
     styleUrl: './artist.component.scss',
     providers: [SpotifyService],
-    imports: [NoimagePipe, LoaderComponent, CardComponent]
+    imports: [NoimagePipe, LoaderComponent, CardComponent, DomseguroPipe]
 })
 export class ArtistComponent {
   artist: any = {};
