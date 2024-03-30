@@ -12,14 +12,17 @@ import { Router } from '@angular/router';
 export class CardComponent {
   @Input() items: any[] = [];
   artistId!: any;
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
 
-  handleArtist(items: any) {
-    if (items?.type === 'artist') {
-      this.artistId = items?.id;
+  }
+
+  handleArtist(item: any) {
+    console.log(item);
+    if (item?.type === 'artist') {
+      this.artistId = item?.id;
     } else {
-      this.artistId = items?.artist[0]?.id;
+      this.artistId = item?.artists[0]?.id;
     }
-    this.router.navigateByUrl(`artist/${this.artistId}`);
+    this.router.navigate(['/artist', this.artistId]);
   }
 }

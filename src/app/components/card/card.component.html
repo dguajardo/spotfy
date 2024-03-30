@@ -1,7 +1,7 @@
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
     @for( song of items; track song) {
     <div class="col">
-        <div (click)="handleArtist(song?.artists?.artist)" class="card m-4 card pointer">
+        <div (click)="handleArtist(song)" class="card m-4 card pointer">
             <img class="card-img-top" [src]="song.images | noimage" alt="Card image cap " />
             <div class="card-body m-3">
                 <h5 class="card-title m-3">{{ song.name }}</h5>
