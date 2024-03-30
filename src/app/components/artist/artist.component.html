@@ -1,1 +1,19 @@
-<p>artist works!</p>
+@if(loading){
+<app-loader></app-loader>
+} @if(!loading){
+<div class="row  animated fadeIn ">
+    <div class="col-2">
+        <img [src]="artist.images | noimage" class="img-thumbnail img-circle">
+    </div>
+    <div class="col">
+        <h3>{{ artist.name}}</h3>
+        <p>
+            <a [href]="artist?.external_urls?.spotify" target="_blank">
+            Go to artist page</a>
+        </p>
+    </div>
+    <div class="col-4 text-right">
+        <button (click)="this.goToUrl('home')" class="btn btn-outline-danger">Back</button>
+    </div>
+</div>
+}
