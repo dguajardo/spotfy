@@ -3,16 +3,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SpotifyService } from '../../services/spotify.service';
 import { NoimagePipe } from '../../pipes/noimage.pipe';
 import { LoaderComponent } from '../shared/loader/loader.component';
+import { CardComponent } from "../card/card.component";
 @Component({
-  selector: 'app-artist',
-  standalone: true,
-  templateUrl: './artist.component.html',
-  styleUrl: './artist.component.scss',
-  imports: [NoimagePipe, LoaderComponent],
-  providers: [SpotifyService]
+    selector: 'app-artist',
+    standalone: true,
+    templateUrl: './artist.component.html',
+    styleUrl: './artist.component.scss',
+    providers: [SpotifyService],
+    imports: [NoimagePipe, LoaderComponent, CardComponent]
 })
 export class ArtistComponent {
   artist: any = {};
+  topTracks: any = [];
   loading!: boolean;
   constructor(
     private router: ActivatedRoute,
@@ -22,6 +24,7 @@ export class ArtistComponent {
 
     this.router.params.subscribe((params) => {
     this.getArtist(params['id']);
+    this.getArtistTopTracks(params['id']);
     });
 
   }
@@ -38,5 +41,12 @@ export class ArtistComponent {
 
     });
 
+  }
+
+  getArtistTopTracks(id: string){
+    this.spotify.getTopTracks(id)?.subscribe((tracks) => {
+      this.topTracks = tracks;
+      console.log(tracks);
+    });
   }
 }
